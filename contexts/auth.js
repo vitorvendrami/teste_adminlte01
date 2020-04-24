@@ -1,21 +1,47 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
+import AsyncStorage from '@react-native-community/async-storage'
 import * as auth from '../services/auth'
 
 const AuthContext = createContext({
     signed: false,
     user: {},
     signIn: Promise,
+    signOut: null,
+    loading: false,
 })
 
 export const AuthProvider = ({ children }) => {
 
-    async function signIn(){
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+
+        async function loadStorageData() {
+            const storageUser = await AsyncStorage.getItem('@Delivery:user')
+            const storageTolken = await AsyncStorage.getItem('@Delivery:tolken')
+
+            if (storageUser && storageTolken) {
+                setUser(JSON.parse(storageUser))
+            }
+        }
+
+        loadStorageData()
+    }, [])
+    async function signIn() {
         const response = await auth.signIn();
 
-        console.log(response)
+        setUser(response.user)
+
+        await AsyncStorage.setItem('@Delivery:user', JSON.stringify(response.user))
+        await AsyncStorage.setItem('@Delivery:tolken', response.tolken)
     }
-    return(
-        <AuthContext.Provider value={{ signed: false, user: {},signIn}}>
+    function signOut() {
+        AsyncStorage.clear().then(()=>{
+            setUser(null)
+        })
+    }
+    return (
+        <AuthContext.Provider value={{ signed: !!user, user, signIn, signOut,loading }}>
             {children}
         </AuthContext.Provider>
     )

@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useContext} from 'react'
+import AuthContext from '../../../contexts/auth'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import Lista from './lista/index'
 import { useNavigation } from '@react-navigation/native'
 import Cabecalho from '../cabecalho/index'
+import AuthRoutes from '../../../routes/auth.routes'
 
 export default function Comprar() {
 
@@ -11,6 +13,12 @@ export default function Comprar() {
     const [state,setState] = useState({
         total: '0',
     }) 
+
+    const {signOut} = useContext(AuthContext)
+
+    const handleSignOut = () =>{
+        signOut()
+    }
     const navigation = useNavigation()
     const changeState = (valor)=>{
         setState({total: valor})
@@ -29,7 +37,7 @@ export default function Comprar() {
                 <View style={Styles.viewtotal}>
                     <Text style={Styles.textTotal}>Total: R$ {valor} </Text>
                 </View>
-                <TouchableOpacity style={Styles.button} onPress={navigateToConfirmar}>
+                <TouchableOpacity style={Styles.button} onPress={handleSignOut}>
                     <Text style={Styles.buttontext}>COMPRAR</Text>
                 </TouchableOpacity>
             </View>

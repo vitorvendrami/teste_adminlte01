@@ -9,9 +9,10 @@ import Cabecalho from '../cabecalho/index'
 export default function Login() {
     const navigation = useNavigation()
 
-    const {signed,signIn} = useContext(AuthContext)
+    const {signed,signIn,user} = useContext(AuthContext)
     
     console.log(signed)
+    console.log(user)
 
     function handleSignIn(){
         signIn()
