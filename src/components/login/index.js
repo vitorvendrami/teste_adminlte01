@@ -3,7 +3,6 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
 import AuthContext from '../../../contexts/auth'
-import Cabecalho from '../cabecalho/index'
 
 
 export default function Login() {
@@ -20,7 +19,6 @@ export default function Login() {
 
     return (
         <View style={Styles.container}>
-             <Cabecalho title ='LOGIN'/>
 
             <Text style={Styles.text}>EMAIL</Text>
             <TextInput style={Styles.input} />

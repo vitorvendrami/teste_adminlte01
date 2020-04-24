@@ -7,19 +7,22 @@ const AuthContext = createContext({
     user: {},
     signIn: Promise,
     signOut: null,
-    loading: false,
+    loading: true,
 })
 
 export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
-    const [loading,setLoading] = useState(true)
+    const [loading,setLoading] = useState(false)
 
     useEffect(() => {
-
+       
         async function loadStorageData() {
+
+        
             const storageUser = await AsyncStorage.getItem('@Delivery:user')
             const storageTolken = await AsyncStorage.getItem('@Delivery:tolken')
+
 
             if (storageUser && storageTolken) {
                 

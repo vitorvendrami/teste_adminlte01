@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import { RadioButton } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
-import Cabecalho from '../cabecalho/index'
 import AsyncStorage from '@react-native-community/async-storage'
 export default function Confirmar(props) {
 

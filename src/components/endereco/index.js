@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
-import Cabecalho from '../cabecalho/index'
+
 export default Endereco = props => {
 
     const [state,setState] = useState({
@@ -20,7 +20,7 @@ export default Endereco = props => {
 
     return (
         <View style={Styles.container} >
-            <Cabecalho title = 'Cadastro'/>
+           
             <View style={Styles.mainview}>
                 <Text style={Styles.text}>Rua</Text>
                 <TextInput style={Styles.input} onChangeText={rua => setState({rua})} />

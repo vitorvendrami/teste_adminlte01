@@ -4,7 +4,6 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import Lista from './lista/index'
 import { useNavigation } from '@react-navigation/native'
-import Cabecalho from '../cabecalho/index'
 
 export default function Comprar() {
 
@@ -24,7 +23,6 @@ export default function Comprar() {
 
     return (
         <View style={Styles.container}>
-            <Cabecalho title='Comprar' />
             <View style={{ marginTop: 100, alignItems: 'center' }}>
                 <View style={Styles.viewlista}>
                     <ScrollView>
@@ -34,7 +32,7 @@ export default function Comprar() {
                 <View style={Styles.viewtotal}>
                     <Text style={Styles.textTotal}>Total: R$ {valor} </Text>
                 </View>
-                <TouchableOpacity style={Styles.button} onPress={()=>{}}>
+                <TouchableOpacity style={Styles.button} onPress={signOut}>
                     <Text style={Styles.buttontext}>COMPRAR</Text>
                 </TouchableOpacity>
             </View>

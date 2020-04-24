@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
-import Cabecalho from '../cabecalho/index'
 import AsyncStorage from '@react-native-community/async-storage'
 
 export default function Cadastro() {
@@ -43,7 +42,6 @@ export default function Cadastro() {
 
     return (
         <View style={Styles.container}>
-            <Cabecalho title='Cadrastro' />
             <View style={{ height: 350, paddingVertical: 10 }}>
                 <ScrollView style={Styles.scroll}>
                     <View style={Styles.maindiv}>

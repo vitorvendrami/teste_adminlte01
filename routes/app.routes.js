@@ -9,7 +9,7 @@ const AppStack = createStackNavigator();
 
 const AppRoutes = ()=>(
     <AppStack.Navigator>
-        <AppStack.Screen name = "Comprar" component = {Comprar}/>
+        <AppStack.Screen name = "Comprar" component = {Comprar} />
     </AppStack.Navigator>
 )
 
