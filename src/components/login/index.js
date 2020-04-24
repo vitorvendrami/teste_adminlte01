@@ -1,17 +1,20 @@
-import React from 'react'
-import {SignIn} from '../../../services/auth'
+import React, {useContext}from 'react'
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
+import AuthContext from '../../../contexts/auth'
 import Cabecalho from '../cabecalho/index'
 
 
 export default function Login() {
     const navigation = useNavigation()
-    async function handleSignIn(){
-        const response = await SignIn()
 
-        console.log(response)
+    const {signed,signIn} = useContext(AuthContext)
+    
+    console.log(signed)
+
+    function handleSignIn(){
+        signIn()
     }
     navigateToCadastro = () => navigation.navigate('Cadastro')
 
