@@ -13,6 +13,7 @@ const AuthContext = createContext({
 export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
+    const [loading,setLoading] = useState(true)
 
     useEffect(() => {
 
@@ -21,7 +22,9 @@ export const AuthProvider = ({ children }) => {
             const storageTolken = await AsyncStorage.getItem('@Delivery:tolken')
 
             if (storageUser && storageTolken) {
+                
                 setUser(JSON.parse(storageUser))
+                setLoading(false)
             }
         }
 

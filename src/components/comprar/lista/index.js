@@ -51,7 +51,7 @@ export default class Lista extends Component {
         return (
             items.map(item => {
                 return (
-                    <View style={Styles.view} key={item}>
+                    <View style={Styles.view} key = {Math.random()}>
                         <View style={Styles.container}>
                             <View style={Styles.view}>
                                 <View style={Styles.viewitem}>

@@ -11,9 +11,6 @@ export default function Login() {
 
     const {signed,signIn,user} = useContext(AuthContext)
     
-    console.log(signed)
-    console.log(user)
-
     function handleSignIn(){
         signIn()
     }
