@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
        
         async function loadStorageData() {
 
-        
+            signIn()
             const storageUser = await AsyncStorage.getItem('@Delivery:user')
             const storageTolken = await AsyncStorage.getItem('@Delivery:tolken')
 

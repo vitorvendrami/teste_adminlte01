@@ -1,14 +1,20 @@
-import React, { createContext } from 'react'
-import { useNavigation } from '@react-navigation/native'
+import React, { createContext, useState } from 'react'
 
 const AppContext = createContext({
-    navigatePerfil: null,
+    totalCompra: 0,
+    handleSetTotal: null,
 })
 
 export const AppProvider = ({ children }) => {
 
+    const [totalCompra, setTotal] = useState(0)
+
+    function handleSetTotal(total){
+        setTotal(total)
+    }
+
     return (
-        <AppContext.Provider value={{}}>
+        <AppContext.Provider value={{ totalCompra, handleSetTotal }}>
             {children}
         </AppContext.Provider>
     )

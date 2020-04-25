@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import { RadioButton } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
+import AuthContext from '../../../contexts/auth'
+
+
 import AsyncStorage from '@react-native-community/async-storage'
 export default function Confirmar(props) {
 
-    const [state,setState] = useState({})
-
-    /*useEffect(() =>
-        async function () {
-            const estado = await AsyncStorage.getItem('Cadastro')
-            JSON.parse(estado)
-            setState(estado)
-            alert(estado.street)
-        },[])*/
-
+    const { user } = useContext(AuthContext)
 
 
     const navigation = useNavigation()
@@ -50,10 +44,10 @@ export default function Confirmar(props) {
                     </View>
                 </View>
                 <View style={Styles.viewAdress}>
-                    <Text style={Styles.adressText}>Rua: {state.street}</Text>
-                    <Text style={Styles.adressText}>Número:</Text>
-                    <Text style={Styles.adressText}>Bairro:</Text>
-                    <Text style={Styles.adressText}>CEP:</Text>
+                    <Text style={Styles.adressText}>Rua: {user.adress.street}</Text>
+                    <Text style={Styles.adressText}>Número:{user.adress.number}</Text>
+                    <Text style={Styles.adressText}>Bairro:{user.adress.neighbor}</Text>
+                    <Text style={Styles.adressText}>CEP:{user.adress.CEP}</Text>
                 </View>
                 <View style={Styles.viewexterna}>
                     <View style={Styles.viewdivisao}>

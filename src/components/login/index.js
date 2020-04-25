@@ -8,7 +8,7 @@ import AuthContext from '../../../contexts/auth'
 export default function Login() {
     const navigation = useNavigation()
 
-    const {signed,signIn,user} = useContext(AuthContext)
+    const {signIn} = useContext(AuthContext)
     
     function handleSignIn(){
         signIn()
