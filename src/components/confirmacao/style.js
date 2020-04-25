@@ -39,7 +39,7 @@ const Styles = StyleSheet.create({
         borderWidth: 3,
         borderColor: '#337ff2',
         padding: 10,
-        marginTop: 100,
+        marginTop: 50,
     },
     radio: {
         flexDirection: 'row',

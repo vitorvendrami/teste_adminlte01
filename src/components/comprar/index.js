@@ -19,7 +19,7 @@ export default function Comprar() {
     const changeState = (valor)=>{
         setState({total: valor})
     }
-    navigateToConfirmar = () => navigation.navigate('Confirmar')
+    navigateToConfirmar = () => navigation.navigate('Confirmação')
 
     return (
         <View style={Styles.container}>
@@ -32,7 +32,7 @@ export default function Comprar() {
                 <View style={Styles.viewtotal}>
                     <Text style={Styles.textTotal}>Total: R$ {valor} </Text>
                 </View>
-                <TouchableOpacity style={Styles.button} onPress={signOut}>
+                <TouchableOpacity style={Styles.button} onPress={navigateToConfirmar}>
                     <Text style={Styles.buttontext}>COMPRAR</Text>
                 </TouchableOpacity>
             </View>

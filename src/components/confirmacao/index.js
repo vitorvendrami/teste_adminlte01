@@ -40,7 +40,6 @@ export default function Confirmar(props) {
 
     return (
         <View style={Styles.container}>
-            <Cabecalho title='Confirmação' />
             <View style={Styles.viewmaisexterna}>
                 <View style={Styles.viewexterna}>
                     <View style={Styles.viewdivisao}>
