@@ -4,11 +4,11 @@ const Styles = StyleSheet.create({
   mainview: {
     backgroundColor: '#FFF',
     width:400,
-    borderWidth: 1,
-    borderColor: '#337ff2',
-    height: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: '#337ff2',
     flexDirection: 'row',
     alignItems: 'center',
+  
   },
   text:{
     fontSize: 18,

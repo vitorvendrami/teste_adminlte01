@@ -5,9 +5,11 @@ import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
 
 export default function Fornecedor() {
+
     const navigation = useNavigation()
-    navigateToEndereco = () => {
-        navigation.navigate('Comprar')
+
+    function navigateToLogin(){
+        navigation.navigate('Login')
     }
     return (
         <View style={Styles.container}>
@@ -15,12 +17,12 @@ export default function Fornecedor() {
                 <Text style={Styles.text}>Escolha seu fornecedor: </Text>
                 <View style={{ alignItems: 'center' }}>
                     <View style={Styles.divlista}>
-                        <ScrollView style={{ backgroundColor: '#337ff2' }}>
+                        <ScrollView>
                             <Lista />
                         </ScrollView>
                     </View>
 
-                    <TouchableOpacity style={Styles.button} onPress={navigateToEndereco}>
+                    <TouchableOpacity style={Styles.button} onPress={navigateToLogin}>
                         <Text style={Styles.text}> CONFIRMAR</Text>
                     </TouchableOpacity>
                 </View>

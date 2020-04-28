@@ -4,12 +4,13 @@ import Styles from './style'
 import { RadioButton } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 import AuthContext from '../../../contexts/auth'
-
+import AppContext from '../../../contexts/app'
 
 import AsyncStorage from '@react-native-community/async-storage'
 export default function Confirmar(props) {
 
     const { user } = useContext(AuthContext)
+    const { totalCompra } = useContext(AppContext)
 
 
     const navigation = useNavigation()
@@ -76,7 +77,7 @@ export default function Confirmar(props) {
                     </View>
                 </View>
                 <View style={Styles.viewexterna}>
-                    <Text style={Styles.text}>Total:</Text>
+                    <Text style={Styles.text}>Total: {totalCompra} R$</Text>
                 </View>
             </View>
             <TouchableOpacity style={Styles.button}>

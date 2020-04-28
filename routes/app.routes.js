@@ -16,13 +16,22 @@ export default AppRoutes = () => {
         <AppStack.Navigator>
             <AppStack.Screen name="Comprar" component={Comprar}
                 options={{
-                    title: 'teste',
                     headerRightContainerStyle: {
                         paddingRight: 20,
                     },
-                    headerRight: () => <Teste/>
+                    headerRight: () => <Teste />,
+                    headerStyle: {
+                        backgroundColor: '#337ff2',
+                    },
+                    headerTintColor: '#FFF',
                 }} />
-            <AppStack.Screen name="Confirmação" component={Confirmar} />
+            <AppStack.Screen name="Confirmação" component={Confirmar}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#337ff2',
+                    },
+                    headerTintColor: '#FFF',
+                }} />
             <AppStack.Screen name="Perfil" component={Perfil} />
         </AppStack.Navigator>
     )

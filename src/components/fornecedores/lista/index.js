@@ -1,33 +1,48 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import Styles from './style'
 import { RadioButton } from 'react-native-paper'
 import { Text, View } from 'react-native'
+import { Provider } from '../../../../services/provider'
 
-const fornecedores = ["Fornecedor 1", "Fornecedor 2", "Fornecedor 3", "Fornecedor 4","Fornecedor 5"]
-export default class Lista extends Component {
-    state = {
-        checked: ''
+
+export default function Lista() {
+
+    async function Prov() {
+        const servico = await Provider()
+        setInfo(servico.info)
     }
-    render() {
-        const { checked } = this.state
-        return (
-            fornecedores.map(
-                fornecedor => {
-                    return (
-                        <View style={Styles.mainview} key = {fornecedor}>
-                            <RadioButton
-                                value={fornecedor}
-                                status={checked === fornecedor ? 'checked' : 'unchecked'}
-                                onPress={() => this.setState({ checked: fornecedor })}
-                                color='#337ff2'
-                                uncheckedColor='#337ff2'
-                            />
-                            <Text style = {Styles.text}>{fornecedor}</Text>
+    useEffect(() => {
+        Prov()
+    }, [])
+
+    const [info, setInfo] = useState([])
+    const fornecedores = info.map(provider => provider.name)
+    const [check, setCheck] = useState('')
+
+    return (
+        info.map(
+            fornecedor => {
+                return (
+                    <View style={Styles.mainview} key={fornecedor.id}>
+                        <RadioButton
+                            value={fornecedor.name}
+                            status={check === fornecedor.name ? 'checked' : 'unchecked'}
+                            onPress={() => setCheck(fornecedor.name)}
+                            color='#337ff2'
+                            uncheckedColor='#337ff2'
+                        />
+                        <View style={{ flexDirection: 'column' }}>
+                            <Text style={Styles.text}>Nome: {fornecedor.name}</Text>
+                            <View>
+                                <Text style={Styles.text}>Endereço:</Text>
+                                <Text style={Styles.text}>Rua: {fornecedor.adress.street}</Text>
+                                <Text style={Styles.text}>Número: {fornecedor.adress.num}</Text>
+                            </View>
                         </View>
-                    )
-                }
-            )
 
+                    </View>
+                )
+            }
         )
-    }
+    )
 }

@@ -11,6 +11,7 @@ const Styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: '#337ff2',
+        backgroundColor: '#FFF',
     },
     viewtotal:{
         padding: 5,

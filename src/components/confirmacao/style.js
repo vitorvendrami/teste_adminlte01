@@ -49,7 +49,7 @@ const Styles = StyleSheet.create({
     },
     text: {
         fontSize: 20,
-        color: '#337ff2',
+        color: 'black',
     },
     adressText: {
         fontSize: 18,
