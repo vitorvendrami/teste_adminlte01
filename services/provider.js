@@ -36,7 +36,7 @@ export function Provider() {
                     products: [
                         {
                             id: 1,
-                            name: 'Água 2l',
+                            name: 'Água 350ml',
                             price: 3.50,
                         },
                         {

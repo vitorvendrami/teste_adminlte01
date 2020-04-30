@@ -14,14 +14,10 @@ export default function Comprar() {
 
 
     navigateToConfirmar = () => navigation.navigate('Confirmação')
-    
+
     button = () => {
 
-        if (totalCompra > 0) {
-            navigateToConfirmar()
-        } else {
-            Alert.alert('Selecione pelo menos um ítem')
-        }
+        navigateToConfirmar()
     }
     return (
         <View style={Styles.container}>

@@ -6,7 +6,7 @@ import Comprar from '../src/components/comprar/index'
 import Confirmar from '../src/components/confirmacao/index'
 import Teste from '../src/components/login/teste-view'
 import Perfil from '../src/components/perfil/index'
-
+import Fornecedor from '../src/components/fornecedores/index'
 
 const AppStack = createStackNavigator();
 
@@ -14,6 +14,13 @@ export default AppRoutes = () => {
 
     return (
         <AppStack.Navigator>
+            <AppStack.Screen name="Fornecedor" component={Fornecedor}
+            options={{
+                headerStyle: {
+                    backgroundColor: '#337ff2',
+                },
+                headerTintColor: '#FFF',
+            }} />
             <AppStack.Screen name="Comprar" component={Comprar}
                 options={{
                     headerRightContainerStyle: {

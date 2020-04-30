@@ -20,14 +20,6 @@ const AuthRoutes = () => (
                 },
                 headerTintColor: '#FFF',
             }} />
-        <AuthStack.Screen name="Fornecedor" component={Fornecedor}
-            options={{
-                headerStyle: {
-                    backgroundColor: '#337ff2',
-                },
-                headerTintColor: '#FFF',
-            }} />
-
     </AuthStack.Navigator>
 )
 

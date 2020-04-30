@@ -9,10 +9,10 @@ const Styles = StyleSheet.create({
         borderBottomWidth: 2,
         padding: 5,
         marginBottom: 5,
-        width: Dimensions.get('screen').width-10,
+        width: Dimensions.get('screen').width,
     },
     viewitem: {
-        width: 120,
+        width: 135,
         alignItems: 'flex-start',
         backgroundColor: '#FFF',
     },
@@ -22,7 +22,7 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
     },
     viewvalor:{
-        width: 110,
+        width: 120,
         alignItems: 'flex-end',
     },
     viewdelete: {

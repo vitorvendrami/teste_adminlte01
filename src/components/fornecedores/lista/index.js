@@ -1,8 +1,9 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState, useEffect,useContext} from 'react'
 import Styles from './style'
 import { RadioButton } from 'react-native-paper'
 import { Text, View } from 'react-native'
 import { Provider } from '../../../../services/provider'
+import AppContext from '../../../../contexts/app'
 
 
 export default function Lista() {
@@ -16,8 +17,13 @@ export default function Lista() {
     }, [])
 
     const [info, setInfo] = useState([])
-    const fornecedores = info.map(provider => provider.name)
     const [check, setCheck] = useState('')
+    const {handleSetProvider} = useContext(AppContext)
+
+    function button(provider){
+        setCheck(provider)
+        handleSetProvider(provider)
+    }
 
     return (
         info.map(
@@ -27,7 +33,7 @@ export default function Lista() {
                         <RadioButton
                             value={fornecedor.name}
                             status={check === fornecedor.name ? 'checked' : 'unchecked'}
-                            onPress={() => setCheck(fornecedor.name)}
+                            onPress={() => button(fornecedor.name)}
                             color='#337ff2'
                             uncheckedColor='#337ff2'
                         />

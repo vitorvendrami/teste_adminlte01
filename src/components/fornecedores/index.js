@@ -8,8 +8,8 @@ export default function Fornecedor() {
 
     const navigation = useNavigation()
 
-    function navigateToLogin(){
-        navigation.navigate('Login')
+    function navigateToComprar(){
+        navigation.navigate('Comprar')
     }
     return (
         <View style={Styles.container}>
@@ -22,7 +22,7 @@ export default function Fornecedor() {
                         </ScrollView>
                     </View>
 
-                    <TouchableOpacity style={Styles.button} onPress={navigateToLogin}>
+                    <TouchableOpacity style={Styles.button} onPress={navigateToComprar}>
                         <Text style={Styles.text}> CONFIRMAR</Text>
                     </TouchableOpacity>
                 </View>
