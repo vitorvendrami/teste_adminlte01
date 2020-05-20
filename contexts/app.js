@@ -28,6 +28,7 @@ export const AppProvider = ({ children }) => {
         loadStorageData()
     }, [])
     function handleSetTotal(total){
+        
         setTotal(total)
     }
     async function handleSetProvider(provider){

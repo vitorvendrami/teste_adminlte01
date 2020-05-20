@@ -1,4 +1,5 @@
 import React,{useContext} from 'react'
+import styles from './style'
 import {View,Text,TouchableOpacity} from 'react-native'
 import AuthContext from '../../../contexts/auth'
 
@@ -11,12 +12,12 @@ export default function Perfil(){
     }
 
     return(
-        <View>
-            <Text>
-                Testando
-            </Text>
-            <TouchableOpacity onPress = {handleSignOUt}>
-                <Text>
+        <View style = {styles.container}> 
+        
+            <Text>Nome: </Text>
+            <Text>Endereço: </Text>
+            <TouchableOpacity onPress = {handleSignOUt} style = {styles.button}>
+                <Text style = {styles.textB}>
                     SignOut
                 </Text>
             </TouchableOpacity>

@@ -20,7 +20,7 @@ export function Provider() {
                         {
                             id: 2,
                             name: 'Gás 4l',
-                            price: 44.34,
+                            price: 44.35,
                         }
                     ]
                 },
@@ -42,7 +42,7 @@ export function Provider() {
                         {
                             id: 2,
                             name: 'Gás 4l',
-                            price: 54.34,
+                            price: 54.35,
                         }
                     ]
                 }
