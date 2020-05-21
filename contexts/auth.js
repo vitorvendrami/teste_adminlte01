@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react'
 import AsyncStorage from '@react-native-community/async-storage'
-import * as auth from '../services/auth'
+import { SignIn } from '../services/auth'
 
 const AuthContext = createContext({
     signed: false,
@@ -13,10 +13,11 @@ const AuthContext = createContext({
 export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [info, setInfo] = useState([])
 
     useEffect(() => {
-       
+
         async function loadStorageData() {
 
             const storageUser = await AsyncStorage.getItem('@Delivery:user')
@@ -24,7 +25,7 @@ export const AuthProvider = ({ children }) => {
 
 
             if (storageUser && storageTolken) {
-                
+
                 setUser(JSON.parse(storageUser))
                 setLoading(false)
             }
@@ -32,21 +33,27 @@ export const AuthProvider = ({ children }) => {
 
         loadStorageData()
     }, [])
-    async function signIn() {
-        const response = await auth.signIn();
-
-        setUser(response.user)
-
-        await AsyncStorage.setItem('@Delivery:user', JSON.stringify(response.user))
-        await AsyncStorage.setItem('@Delivery:tolken', response.tolken)
+    async function signIn(user_email) {
+        const response = await SignIn();
+        setInfo(response.users)
+        var teste = info.filter(res => res.email == user_email)
+        if (teste.length !=0) {
+            console.log(teste)
+            console.log(teste.length)
+            setUser(teste[0])
+            await AsyncStorage.setItem('@Delivery:user', JSON.stringify(teste[0]))
+            await AsyncStorage.setItem('@Delivery:tolken', teste[0].tolken)
+        }else{
+            alert('Usuário não cadastrado')
+        }
     }
     function signOut() {
-        AsyncStorage.clear().then(()=>{
+        AsyncStorage.clear().then(() => {
             setUser(null)
         })
     }
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, signIn, signOut,loading }}>
+        <AuthContext.Provider value={{ signed: !!user, user, signIn, signOut, loading }}>
             {children}
         </AuthContext.Provider>
     )

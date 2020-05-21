@@ -1,4 +1,4 @@
-import React, {useContext}from 'react'
+import React, {useContext,useState}from 'react'
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
@@ -9,9 +9,10 @@ export default function Login() {
     const navigation = useNavigation()
 
     const {signIn} = useContext(AuthContext)
+    const [email,setEmail] = useState('')
     
     function handleSignIn(){
-        signIn()
+        signIn(email)
     }
     navigateToCadastro = () => navigation.navigate('Cadastro')
 
@@ -21,7 +22,7 @@ export default function Login() {
         <View style={Styles.container}>
 
             <Text style={Styles.text}>EMAIL</Text>
-            <TextInput style={Styles.input} />
+            <TextInput style={Styles.input} onChangeText ={item => setEmail(item)}/>
             <Text style={Styles.text}>SENHA</Text>
             <TextInput style={Styles.input} />
 

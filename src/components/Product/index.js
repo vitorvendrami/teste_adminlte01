@@ -8,24 +8,27 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 export default function Product(props) {
 
     const [amount, setAmount] = useState(0)
-
+    var total = 0
 
     const { handleSetTotal, totalCompra } = useContext(AppContext)
 
     function handleAmount(cod) {
         if (cod === 1) {
             setAmount(amount + 1)
-            handleSetTotal(totalCompra + props.price)
+           
+            handleSetTotal(totalCompra+props.price)
+
         } else if (cod === 2) {
             if (amount > 0) {
                 setAmount(amount - 1)
                 handleSetTotal(totalCompra - props.price)
-            } else {
                 return
             }
         } else {
-            handleSetTotal(totalCompra - (props.price * amount))
-            setAmount(0)
+            if (amount > 0) {
+                handleSetTotal(totalCompra - (props.price * amount))
+                setAmount(0);
+            }
         }
     }
     return (
