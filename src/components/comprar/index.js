@@ -16,12 +16,15 @@ export default function Comprar() {
     navigateToConfirmar = () => navigation.navigate('Confirmação')
 
     button = () => {
-
-        navigateToConfirmar()
+        if (totalCompra > 0) {
+            navigateToConfirmar()
+        }else{
+            alert('Selecione pelo menos um ítem')
+        }
     }
     return (
         <View style={Styles.container}>
-            <View style={{ marginTop: 100, alignItems: 'center' }}>
+            <View style={{  alignItems: 'center' }}>
                 <View style={Styles.viewlista}>
                     <ScrollView>
                         <Lista />

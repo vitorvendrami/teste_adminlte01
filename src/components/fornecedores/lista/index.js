@@ -1,7 +1,7 @@
-import React, { useState, useEffect,useContext} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Styles from './style'
 import { RadioButton } from 'react-native-paper'
-import { Text, View } from 'react-native'
+import { Text, View, Animated } from 'react-native'
 import { Provider } from '../../../../services/provider'
 import AppContext from '../../../../contexts/app'
 
@@ -18,14 +18,15 @@ export default function Lista() {
 
     const [info, setInfo] = useState([])
     const [check, setCheck] = useState('')
-    const {handleSetProvider} = useContext(AppContext)
+    const { handleSetProvider } = useContext(AppContext)
 
-    function button(provider){
+    function button(provider) {
+
         setCheck(provider)
         handleSetProvider(provider)
     }
-
     return (
+        
         info.map(
             fornecedor => {
                 return (
@@ -45,7 +46,6 @@ export default function Lista() {
                                 <Text style={Styles.text}>Número: {fornecedor.adress.num}</Text>
                             </View>
                         </View>
-
                     </View>
                 )
             }

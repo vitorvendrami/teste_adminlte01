@@ -3,11 +3,12 @@ import { StyleSheet,Dimensions } from 'react-native'
 const Styles = StyleSheet.create({
     container: {
         justifyContent: 'space-between',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         flexDirection: 'row',
         borderBottomColor: '#337ff2',
         borderBottomWidth: 2,
         padding: 5,
+        paddingHorizontal: 10,
         marginBottom: 5,
         width: Dimensions.get('screen').width,
     },
@@ -15,11 +16,6 @@ const Styles = StyleSheet.create({
         width: 135,
         alignItems: 'flex-start',
         backgroundColor: '#FFF',
-    },
-    view: {
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        alignItems: 'center',
     },
     viewvalor:{
         width: 120,

@@ -7,7 +7,7 @@ const Styles = StyleSheet.create({
         flex: 1,
     },
     viewlista: {
-        height:300,
+        height:400,
         borderRadius: 10,
         borderWidth: 1,
         borderColor: '#337ff2',

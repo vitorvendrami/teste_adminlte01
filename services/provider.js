@@ -11,18 +11,6 @@ export function Provider() {
                         neighbor: 'INATEL',
                         CEP: '37500-400',
                     },
-                    products: [
-                        {
-                            id: 1,
-                            name: 'Água 2l',
-                            price: 4.50,
-                        },
-                        {
-                            id: 2,
-                            name: 'Gás 4l',
-                            price: 44.35,
-                        }
-                    ]
                 },
                 {
                     id: 2,
@@ -33,18 +21,46 @@ export function Provider() {
                         neighbor: 'São João',
                         CEP: '37500-738',
                     },
-                    products: [
-                        {
-                            id: 1,
-                            name: 'Água 350ml',
-                            price: 3.50,
-                        },
-                        {
-                            id: 2,
-                            name: 'Gás 4l',
-                            price: 54.35,
-                        }
-                    ]
+                },
+                {
+                    id: 3,
+                    name: 'Srs Gás LTDA',
+                    adress: {
+                        street: 'Pereira Sanches',
+                        num: 120,
+                        neighbor: 'São João',
+                        CEP: '37500-738',
+                    },
+                },
+                {
+                    id: 4,
+                    name: 'ABC da àgua',
+                    adress: {
+                        street: 'Pereira Sanches',
+                        num: 120,
+                        neighbor: 'São João',
+                        CEP: '37500-738',
+                    },
+                },
+                {
+                    id: 5,
+                    name: 'Àgua e CIA',
+                    adress: {
+                        street: 'Pereira Sanches',
+                        num: 120,
+                        neighbor: 'São João',
+                        CEP: '37500-738',
+                    },
+                },
+                {
+                    id: 6,
+                    name: '123Àgua',
+                    adress: {
+                        street: 'Pereira Sanches',
+                        num: 120,
+                        neighbor: 'São João',
+                        CEP: '37500-738',
+                    },
                 }
             ]
         })

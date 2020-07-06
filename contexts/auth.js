@@ -38,8 +38,6 @@ export const AuthProvider = ({ children }) => {
         setInfo(response.users)
         var teste = info.filter(res => res.email == user_email)
         if (teste.length !=0) {
-            console.log(teste)
-            console.log(teste.length)
             setUser(teste[0])
             await AsyncStorage.setItem('@Delivery:user', JSON.stringify(teste[0]))
             await AsyncStorage.setItem('@Delivery:tolken', teste[0].tolken)

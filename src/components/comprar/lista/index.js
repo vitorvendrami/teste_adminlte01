@@ -1,12 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
 import AppContext from '../../../../contexts/app'
-import { Provider } from '../../../../services/provider'
+import { Products } from '../../../../services/products'
 import Product from '../../Product/index'
+import { createIconSetFromFontello } from 'react-native-vector-icons'
 
 export default Lista = () => {
 
     async function Prov() {
-        const servico = await Provider()
+        const servico = await Products()
         setInfo(servico.info)
     }
     useEffect(() => {
@@ -15,18 +16,18 @@ export default Lista = () => {
 
     const { providerName } = useContext(AppContext)
     const [info, setInfo] = useState([])
-    const filtrado = info.filter((info) => info.name === providerName).map(info=>info.products)
+    const filtrado = info.filter(item => item.seller === providerName)
+    console.log(filtrado)
+    console.log(info)
+    console.log(providerName)
     
-   
     return (
-        filtrado.map(info =>
-            info.map(item => {
+        filtrado.map(info =>{
                 return (
-                    <Product name = {item.name} price = {item.price} key ={item.id}/>
+                    <Product name = {info.name} price = {info.price} key ={info.id}/>
                 )
             })
         )
-    )
 }
 
  

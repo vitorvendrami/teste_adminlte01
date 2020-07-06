@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 export default function Product(props) {
 
     const [amount, setAmount] = useState(0)
+    const [show, setShow] = useState(false)
     var total = 0
 
     const { handleSetTotal, totalCompra } = useContext(AppContext)
@@ -15,8 +16,8 @@ export default function Product(props) {
     function handleAmount(cod) {
         if (cod === 1) {
             setAmount(amount + 1)
-           
-            handleSetTotal(totalCompra+props.price)
+
+            handleSetTotal(totalCompra + props.price)
 
         } else if (cod === 2) {
             if (amount > 0) {
@@ -32,36 +33,37 @@ export default function Product(props) {
         }
     }
     return (
-        <View style={Styles.view}>
+        <>
             <View style={Styles.container}>
-                <View style={Styles.view}>
-                    <View style={Styles.viewitem}>
-                        <Text style={Styles.text}>
-                            {props.name}
-                        </Text>
-                    </View>
-                    <View style={Styles.viewvalor}>
-                        <Text style={Styles.text}>R$ {props.price}</Text>
-                    </View>
-                    <View style={[Styles.view, { paddingHorizontal: 10 }]}>
-                        <TouchableOpacity style={Styles.button} onPress={() => handleAmount(1)}>
-                            <Text style={Styles.buttontext}>+</Text>
-                        </TouchableOpacity>
-
-                        <Text style={Styles.tela}>{amount}</Text>
-                        <TouchableOpacity style={Styles.button} onPress={() => handleAmount(2)}>
-                            <Text style={Styles.buttontext}>-</Text>
-                        </TouchableOpacity>
-                    </View>
+                <View style={Styles.viewitem}>
+                    <Text style={Styles.text}>
+                        {props.name}
+                    </Text>
                 </View>
-                <View>
-                    <TouchableOpacity onPress={() => handleAmount(3)} >
-                        <View style={Styles.viewdelete}>
-                            <Icon name='delete' size={25} />
-                        </View>
+                <View style={Styles.viewvalor}>
+                    <Text style={Styles.text}>R$ {props.price}</Text>
+                </View>
+                <View style={{ marginRight: 10, flexDirection: 'row', alignItems: 'center' }}>
+                    <TouchableOpacity style={Styles.button} onPress={() => handleAmount(1)}>
+                        <Text style={Styles.buttontext}>+</Text>
+                    </TouchableOpacity>
+                    <Text style={Styles.tela}>{amount}</Text>
+                    <TouchableOpacity style={Styles.button} onPress={() => handleAmount(2)}>
+                        <Text style={Styles.buttontext}>-</Text>
                     </TouchableOpacity>
                 </View>
+                <TouchableOpacity onPress={() => handleAmount(3)} >
+                    <View style={Styles.viewdelete}>
+                        <Icon name='delete' size={25} />
+                    </View>
+                </TouchableOpacity>
+
+                <View style={{ flexDirection: 'column' }}>
+                    <Text>  ABC fafasjfhjjkahfjkahjhfjahfhkjshdfaljkshdlfaks </Text>
+                </View>
+
             </View>
-        </View>
+           
+        </>
     )
 }
