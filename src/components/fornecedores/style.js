@@ -3,8 +3,7 @@ import { StyleSheet,Dimensions } from 'react-native'
 const Styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFF',
-        paddingHorizontal: 20,
+        backgroundColor: '#fff',
     },
     divlista:{
         height:250,
@@ -14,11 +13,8 @@ const Styles = StyleSheet.create({
         marginTop: 10,
         padding: 5,
     },
-    lista: {
-        backgroundColor: 'yellow'
-    },
     text: {
-        color: '#FFF',
+        color: '#337ff2',
         fontWeight: 'bold',
         marginTop: 10,
         fontSize: 18,

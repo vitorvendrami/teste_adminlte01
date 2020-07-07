@@ -1,35 +1,35 @@
-import React, { useContext, useState } from 'react'
-import { View, TouchableOpacity, Text, ScrollView } from 'react-native'
+import React, { useState } from 'react'
+import { View, TouchableOpacity, Text, ScrollView, ActivityIndicator } from 'react-native'
 import Lista from './lista/index'
 import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
-import AppContext from '../../../contexts/app'
+
 export default function Fornecedor() {
 
     const navigation = useNavigation()
-    const { providername } = useContext(AppContext)
-    const [nome, setnome] = useState('')
+    const [isloading, setloading] = useState(false)
+
     function navigateToComprar() {
-        console.log(providername)
 
         navigation.navigate('Comprar')
+    }
+    function childloading(loading) {
+        setloading(loading)
     }
 
     return (
         <View style={Styles.container}>
-            <View style={{ marginTop: 100 }}>
-                <Text style={Styles.text}>Escolha seu fornecedor: </Text>
-                <View style={{ alignItems: 'center' }}>
-                    <View style={Styles.divlista}>
-                        <ScrollView>
-                            <Lista func={() => setnome()} />
-                        </ScrollView>
-                    </View>
-                    <TouchableOpacity style={Styles.button} onPress={navigateToComprar}>
-                        <Text style={Styles.text}> CONFIRMAR</Text>
-                    </TouchableOpacity>
+            <Text style={Styles.text}>Escolha seu fornecedor: </Text>
+            <View style={{ alignItems: 'center' }}>
+                <View style={{ height: 450 }}>
+                    <ScrollView>
+                        <Lista func={childloading} />
+                    </ScrollView>
                 </View>
-            </View
+                <TouchableOpacity style={Styles.button} onPress={navigateToComprar}>
+                    <Text style={Styles.text}> CONFIRMAR</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

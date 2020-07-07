@@ -24,7 +24,6 @@ export const AppProvider = ({ children }) => {
                 setUser(storageProviderName)
             }
         }
-
         loadStorageData()
     }, [])
     function handleSetTotal(total){

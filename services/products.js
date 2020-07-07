@@ -12,7 +12,7 @@ export function Products() {
                     seller: "Água e Gás Santa Rita",
                 },
                 {
-                    id: 1,
+                    id: 2,
                     name: "AGUA",
                     price: 4.54,
                     quantity: 0,
@@ -21,7 +21,7 @@ export function Products() {
                     seller: "Água e Gás Santa Rita",
                 },
                 {
-                    id: 1,
+                    id: 3,
                     name: "GAS",
                     price: 3.45,
                     quantity: 0,
@@ -30,7 +30,7 @@ export function Products() {
                     seller: "Água e Gás Santa Rita",
                 },
                 {
-                    id: 1,
+                    id: 4,
                     name: "GAS",
                     price: 4.34,
                     quantity: 0,
@@ -39,7 +39,7 @@ export function Products() {
                     seller: "Água e Gás Santa Rita",
                 },
                 {
-                    id: 1,
+                    id: 5,
                     name: "AGUA",
                     price: 1.34,
                     quantity: 0,
@@ -48,7 +48,7 @@ export function Products() {
                     seller: "Água e Gás Santa Rita",
                 },
                 {
-                    id: 1,
+                    id: 6,
                     name: "GÁS",
                     price: 2.45,
                     quantity: 0,

@@ -13,7 +13,7 @@ const AuthContext = createContext({
 export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [info, setInfo] = useState([])
 
     useEffect(() => {
@@ -22,17 +22,15 @@ export const AuthProvider = ({ children }) => {
 
             const storageUser = await AsyncStorage.getItem('@Delivery:user')
             const storageTolken = await AsyncStorage.getItem('@Delivery:tolken')
-
-
             if (storageUser && storageTolken) {
 
                 setUser(JSON.parse(storageUser))
-                setLoading(false)
             }
+             setLoading(false)
         }
-
         loadStorageData()
     }, [])
+
     async function signIn(user_email) {
         const response = await SignIn();
         setInfo(response.users)
@@ -45,6 +43,7 @@ export const AuthProvider = ({ children }) => {
             alert('Usuário não cadastrado')
         }
     }
+
     function signOut() {
         AsyncStorage.clear().then(() => {
             setUser(null)

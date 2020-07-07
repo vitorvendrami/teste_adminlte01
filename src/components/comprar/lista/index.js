@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from 'react'
 import AppContext from '../../../../contexts/app'
 import { Products } from '../../../../services/products'
 import Product from '../../Product/index'
-import { createIconSetFromFontello } from 'react-native-vector-icons'
 
 export default Lista = () => {
 
