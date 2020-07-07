@@ -4,7 +4,6 @@ import Styles from './style'
 import { useNavigation } from '@react-navigation/native'
 import AuthContext from '../../../contexts/auth'
 
-
 export default function Login() {
     const navigation = useNavigation()
 
@@ -67,7 +66,6 @@ export default function Login() {
                 <TextInput style={Styles.input} onChangeText={item => setEmail(item)} />
                 <Text style={Styles.text}>SENHA</Text>
                 <TextInput style={Styles.input} />
-
 
                 <TouchableOpacity style={Styles.button} onPress={handleSignIn}>
                     <Text style={Styles.textB}>ENTRAR</Text>

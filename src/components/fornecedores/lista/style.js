@@ -8,7 +8,6 @@ const Styles = StyleSheet.create({
     borderBottomColor: '#337ff2',
     flexDirection: 'row',
     alignItems: 'center',
-  
   },
   text:{
     fontSize: 18,

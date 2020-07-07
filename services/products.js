@@ -17,7 +17,7 @@ export function Products() {
                     price: 4.54,
                     quantity: 0,
                     type: "",
-                    description: "",
+                    description: "hshshshshshsh",
                     seller: "Água e Gás Santa Rita",
                 },
                 {

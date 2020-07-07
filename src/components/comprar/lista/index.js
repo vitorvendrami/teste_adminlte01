@@ -16,14 +16,16 @@ export default Lista = () => {
     const { providerName } = useContext(AppContext)
     const [info, setInfo] = useState([])
     const filtrado = info.filter(item => item.seller === providerName)
-    console.log(filtrado)
-    console.log(info)
-    console.log(providerName)
     
     return (
         filtrado.map(info =>{
                 return (
-                    <Product name = {info.name} price = {info.price} key ={info.id}/>
+                    <Product 
+                    name = {info.name} 
+                    price = {info.price} 
+                    description = {info.description} 
+                    key ={info.id}
+                    />
                 )
             })
         )

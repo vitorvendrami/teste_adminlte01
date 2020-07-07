@@ -7,11 +7,9 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function Comprar() {
 
-
     const { totalCompra } = useContext(AppContext)
 
     const navigation = useNavigation()
-
 
     navigateToConfirmar = () => navigation.navigate('Confirmação')
 
