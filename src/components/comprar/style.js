@@ -8,7 +8,6 @@ const Styles = StyleSheet.create({
     },
     viewlista: {
         height:400,
-        borderRadius: 10,
         borderWidth: 1,
         borderColor: '#337ff2',
         backgroundColor: '#FFF',
@@ -22,8 +21,6 @@ const Styles = StyleSheet.create({
         fontSize: 30,
         color: 'black',
         fontWeight: 'bold',
-
-      
     },
     button: {
         backgroundColor: '#337ff2',

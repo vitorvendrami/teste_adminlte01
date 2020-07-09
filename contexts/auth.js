@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         async function loadStorageData() {
 
             const storageUser = await AsyncStorage.getItem('@Delivery:user')
-            const storageTolken = await AsyncStorage.getItem('@Delivery:tolken')
+            const storageTolken = await AsyncStorage.getItem('@Delivery:token')
             if (storageUser && storageTolken) {
 
                 setUser(JSON.parse(storageUser))
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
        try{
             setUser(teste[0])
             await AsyncStorage.setItem('@Delivery:user', JSON.stringify(teste[0]))
-            await AsyncStorage.setItem('@Delivery:tolken', teste[0].tolken)
+            await AsyncStorage.setItem('@Delivery:token', teste[0].tolken)
         }
         catch{
             alert('Usuário não cadastrado')

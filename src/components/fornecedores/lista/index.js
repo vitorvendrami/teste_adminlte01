@@ -35,6 +35,7 @@ export default function Lista(props) {
                     status={check === provider.name ? 'checked' : 'unchecked'}
                     color='#337ff2'
                     uncheckedColor='#337ff2'
+                    onPress={() => button(provider.name)}
                 />
                 <View style={{ flexDirection: 'column' }}>
                     <Text style={Styles.text}>Nome: {provider.name}</Text>
@@ -50,7 +51,7 @@ export default function Lista(props) {
 
     return (
         <>
-        { items }
+            {items}
         </>
     )
 
